@@ -1,0 +1,7 @@
+@EndUserText.label: 'Employee Service'
+define service ZSHS2_UI_EMPLOYEES {
+  expose ZSHS2_C_EMPLOYEES;
+  expose ZSHS2_C_EMPL_T;
+  expose ZSHS2_C_AC_SUB_T;
+  expose ZSHS2_C_PRODUCTS;
+}

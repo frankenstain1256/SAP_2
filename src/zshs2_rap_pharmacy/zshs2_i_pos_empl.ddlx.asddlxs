@@ -1,0 +1,10 @@
+@Metadata.layer: #CORE
+annotate view ZSHS2_I_POS_EMPL with
+{
+  @UI.lineItem: [{ position: 10 }]
+  POSID;
+  @UI.lineItem: [{ position: 20 }]
+  EmployeeID;
+  @UI.lineItem: [{ position: 30 }]
+  POSPlacementDate;
+}

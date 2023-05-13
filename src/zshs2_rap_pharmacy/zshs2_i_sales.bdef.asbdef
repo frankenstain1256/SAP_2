@@ -1,0 +1,68 @@
+managed implementation in class zbp_shs2_i_sales unique;
+//strict ( 1 );
+
+define behavior for ZSHS2_I_SALES alias Sales
+persistent table zshs2_a_sales
+//with additional save
+lock master
+late numbering
+//authorization master ( instance )
+//etag master <field_name>
+{
+  create;
+  delete;
+  association _Sales_DT { create ( features : instance ); }
+  field ( mandatory : create, readonly : update ) posid, EmployeeID;
+  field ( readonly ) POSNumber, PersonalNumber;
+
+  determination calculateReceiptNumber on save { create; }
+
+//  validation validateCashStatus on save { create; update; }
+//
+//  action acceptReceipt;
+//
+//  action rejectReceipt;
+
+  mapping for ZSHS2_A_SALES
+  {
+    EmployeeID = s_e_id;
+    posid = s_pos_id;
+    SaleDate = s_date;
+    SaleTime = s_time;
+    SaleIsCash = s_is_cash;
+    ReceiptNumber = s_receipt_number;
+  }
+}
+
+
+define behavior for ZSHS2_I_SALES_DT alias Sales_DT
+implementation in class zbp_shs2_i_sales_dt unique
+persistent table zshs2_a_sales_dt
+lock dependent by _Sales
+late numbering
+//authorization dependent by _Sales
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) ReceiptNumber, ProductBasePrice, ProductTotalCost;
+  field ( mandatory : create, readonly : update ) ProductID;
+  field ( mandatory ) ProductCount;
+
+  determination calculateBasePrice on save { create; }
+  determination calculateTotalCost on modify { create; update; }
+
+  action calcTotal;
+
+  association _Sales;
+
+  mapping for ZSHS2_A_SALES_DT
+  {
+    ReceiptNumber = s_receipt_number;
+    ProductBasePrice = s_p_base_price;
+    ProductCount = s_p_count;
+    ProductDiscount = s_p_discount;
+    ProductID = s_p_id;
+    ProductTotalCost = s_p_total_cost;
+  }
+}

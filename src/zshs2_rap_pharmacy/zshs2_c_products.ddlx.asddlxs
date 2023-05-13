@@ -1,0 +1,15 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeNamePlural: 'Products' }
+annotate view ZSHS2_C_PRODUCTS
+  with 
+{
+  @UI.selectionField: [{ position: 10 }]
+  ProductID;
+  @UI.selectionField: [{ position: 20 }]
+  ProductName;
+  @UI.selectionField: [{ position: 30 }]
+  ProductBarcode;
+  @UI.selectionField: [{ position: 40 }]
+  @Consumption.valueHelpDefault.display: true
+  IsMedicinePrescribed;
+}

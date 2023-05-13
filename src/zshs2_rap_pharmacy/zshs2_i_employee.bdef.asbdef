@@ -1,0 +1,68 @@
+managed implementation in class zbp_shs2_i_employee unique;
+//strict ( 1 );
+
+define behavior for ZSHS2_I_EMPLOYEE alias Employee
+persistent table zshs2_a_employee
+lock master
+late numbering
+//authorization:none
+//etag master <field_name>
+{
+  field ( readonly ) EmployeeID;
+  field ( mandatory ) EmployeePersonalNumber, EmployeeBirthDate, EmployeeLastName, EmployeeFirstName;
+
+  create;
+  update;
+  delete;
+
+  association _POS_Empl { create; }
+
+  //  action ( features : instance ) createEmployee result [1] $self;
+
+ validation validatePersonalNumber on save { field EmployeePersonalNumber; create; update; }
+  validation validateBirthDate on save { field EmployeeBirthDate; create; update; }
+  validation validateNames on save { field EmployeeLastName, EmployeeFirstName, EmployeeMiddleName; create; update; }
+  validation validateDiscount on save { field EmployeeDiscount; create; update; }
+
+  determination calculateCorpEmail on save { create; }
+
+  mapping for zshs2_a_employee
+  {
+    EmployeeID = e_id;
+    EmployeePersonalNumber = e_pers_number;
+    EmployeeLastName = e_last_name;
+    EmployeeFirstName = e_first_name;
+    EmployeeMiddleName = e_mid_name;
+    EmployeeBirthDate = e_birth_date;
+    EmployeePersPhoneNumber = e_pers_phone;
+    EmployeeCorpPhoneNumber = e_corp_phone;
+    EmployeePersEmail = e_pers_email;
+    EmployeeCorpEmail = e_corp_email;
+    EmployeeDiscount = e_pers_discount;
+  }
+}
+
+//
+//define behavior for ZSHS2_I_POS_EMPL alias POS_Empl
+//persistent table zshs2_a_pos_empl
+//lock dependent by _Employees
+//late numbering
+////authorization master ( instance )
+////etag master <field_name>
+//{
+//  association _Employees;
+//
+//  create;
+//  update;
+//  delete;
+//
+//  field ( readonly ) EmployeeID, POSID;
+//  field ( mandatory ) POSPlacementDate;
+//
+//  mapping for zshs2_a_pos_empl
+//  {
+//    EmployeeID = e_id;
+//    POSID = pos_id;
+//    POSPlacementDate = pos_place_date;
+//  }
+//}

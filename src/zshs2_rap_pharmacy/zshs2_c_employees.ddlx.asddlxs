@@ -1,0 +1,111 @@
+@Metadata.layer: #CORE
+//@UI.headerInfo: { typeNamePlural: 'Employees', typeName: 'Employee Information', title: { type: #STANDARD, value: 'ID' }, description: { type: #STANDARD, value: 'PersonalNumber' }}
+@UI.headerInfo: { typeNamePlural: 'Employees', typeName: 'Employee Information' }
+annotate view ZSHS2_C_EMPLOYEES with
+{
+  @UI.facet: [
+  {
+  purpose: #HEADER,
+  position: 20,
+  type: #DATAPOINT_REFERENCE,
+  targetQualifier: 'PersonalNumber'
+  },
+  {
+  id: 'PersonalInfo',
+  type: #COLLECTION,
+  position: 10,
+  targetQualifier: 'PersonalInfo',
+  label: 'Personal Information'
+  },
+  {
+  id: 'ContactInfo',
+  type: #COLLECTION,
+  position: 20,
+  targetQualifier: 'ContactInfo',
+  label: 'Contact Information'
+  },
+  {
+  id: 'NamesInfo',
+  type: #COLLECTION,
+  position: 30,
+  targetQualifier: 'NamesInfo',
+  label: 'Names'
+  },
+  {
+  label: 'General',
+  purpose: #STANDARD,
+  type: #FIELDGROUP_REFERENCE,
+  parentId: 'PersonalInfo',
+  targetQualifier: 'General',
+  position: 10
+  },
+  {
+  label: 'Other',
+  purpose: #STANDARD,
+  type: #FIELDGROUP_REFERENCE,
+  parentId: 'PersonalInfo',
+  targetQualifier: 'Other',
+  position: 20
+  },
+  {
+  purpose: #STANDARD,
+  type: #FIELDGROUP_REFERENCE,
+  parentId: 'NamesInfo',
+  position: 10,
+  targetQualifier: 'NameGroup',
+  label: 'Names'
+  },
+  {
+  label: 'Contact Information',
+  purpose: #STANDARD,
+  type: #FIELDGROUP_REFERENCE,
+  parentId: 'ContactInfo',
+  position: 10,
+  targetQualifier: 'ContactGroup'
+  },
+  {
+  label: 'POS Assignment',
+  purpose: #STANDARD,
+  type: #LINEITEM_REFERENCE,
+  //  parentId: 'ContactInfo',
+  position: 100,
+  targetElement: '_POS_Empl'
+  }
+  ]
+
+  @UI.dataPoint: { qualifier: 'ID', title: 'ID' }
+  @UI.identification: [{ position: 10 }]
+  @UI.fieldGroup: [{ qualifier: 'General', position: 20 }]
+  ID;
+  @UI.selectionField: [{ position: 10 }]
+  @UI.dataPoint: { qualifier: 'PersonalNumber', title: 'Personal Number' }
+  @UI.identification: [{ position: 20 }]
+  @UI.fieldGroup: [{ qualifier: 'General', position: 30 }]
+  PersonalNumber;
+  @UI.selectionField: [{ position: 20 }]
+  @UI.dataPoint: { qualifier: 'LastName', title: 'Last Name' }
+  @UI.fieldGroup: [{ qualifier: 'NameGroup', position: 10 }]
+  LastName;
+  @UI.dataPoint: { qualifier: 'FirstName', title: 'First Name' }
+  @UI.fieldGroup: [{ qualifier: 'NameGroup', position: 20 }]
+  FirstName;
+  @UI.dataPoint: { qualifier: 'MiddleName', title: 'Middle Name' }
+  @UI.fieldGroup: [{ qualifier: 'NameGroup', position: 30 }]
+  MiddleName;
+  @UI.dataPoint: { qualifier: 'BirthDate', title: 'Birth Date' }
+  @UI.identification: [{ position: 30 }]
+  @UI.selectionField: [{ position: 30 }]
+  @UI.fieldGroup: [{ qualifier: 'General', position: 40 }]
+  BirthDate;
+  @UI.fieldGroup: [{ qualifier: 'ContactGroup', position: 10 }]
+  PersPhoneNum;
+  @UI.fieldGroup: [{ qualifier: 'ContactGroup', position: 20 }]
+  CorpPhoneNum;
+  @UI.fieldGroup: [{ qualifier: 'ContactGroup', position: 30 }]
+  PersEmail;
+  @UI.fieldGroup: [{ qualifier: 'ContactGroup', position: 40 }]
+  CorpEmail;
+  @UI.identification: [{ position: 40 }]
+  @UI.fieldGroup: [{ qualifier: 'Other', position: 10 }]
+  Discount;
+}

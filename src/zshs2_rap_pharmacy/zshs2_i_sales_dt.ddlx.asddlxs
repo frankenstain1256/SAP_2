@@ -1,0 +1,48 @@
+@Metadata.layer: #CORE
+annotate view ZSHS2_I_SALES_DT
+  with 
+{
+  @UI.facet: [
+  {
+  //label: 'General',
+  purpose: #STANDARD,
+  type: #FIELDGROUP_REFERENCE,
+  targetQualifier: 'General',
+  position: 10
+  }
+  ]
+  @UI.lineItem: [{ position: 10 }]
+  //@UI.dataPoint: {  qualifier: 'ReceiptNumber', title: 'Receipt Number' }
+  @UI.fieldGroup: [{ qualifier: 'General', position: 10 }]
+  ReceiptNumber;
+  @UI.lineItem: [{ position: 20 }]
+  //@UI.dataPoint: {  qualifier: 'ProductID', title: 'Product ID' }
+  @UI.fieldGroup: [{ qualifier: 'General', position: 20 }]
+      @Consumption.valueHelpDefinition: [{
+        entity: {
+        name: 'ZSHS2_C_POS_REMN',
+        element: 'ProductID'
+        },
+        additionalBinding: [{
+        element: 'POSID',
+        usage: #FILTER
+        }]
+        }]
+  ProductID;
+  @UI.lineItem: [{ position: 30 }]
+  //@UI.dataPoint: {  qualifier: 'ProductBasePrice', title: 'Base Price' }
+  @UI.fieldGroup: [{ qualifier: 'General', position: 30 }]
+  ProductBasePrice;
+  @UI.lineItem: [{ position: 40 }]
+  //@UI.dataPoint: {  qualifier: 'ProductDiscount', title: 'Discount' }
+  @UI.fieldGroup: [{ qualifier: 'General', position: 40 }]
+  ProductDiscount;
+  @UI.lineItem: [{ position: 50 }]
+  //@UI.dataPoint: {  qualifier: 'ProductCount', title: 'Count' }
+  @UI.fieldGroup: [{ qualifier: 'General', position: 50 }]
+  ProductCount;
+  @UI.lineItem: [{ position: 60 }]
+  //@UI.dataPoint: {  qualifier: 'ProductTotalCost', title: 'Total Cost' }
+  @UI.fieldGroup: [{ qualifier: 'General', position: 60 }]
+  ProductTotalCost;
+}

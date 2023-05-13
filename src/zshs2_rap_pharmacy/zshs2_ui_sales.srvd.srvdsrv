@@ -1,0 +1,13 @@
+@EndUserText.label: 'Sales Service'
+define service ZSHS2_UI_SALES {
+  expose ZSHS2_C_AC_SUB;
+  expose ZSHS2_C_EMPLOYEES;
+  expose ZSHS2_C_POS;
+  expose ZSHS2_C_POS_EMPL;
+  expose ZSHS2_C_POS_REMN;
+  expose ZSHS2_C_PRODUCTS;
+  expose ZSHS2_C_SALES;
+  expose ZSHS2_C_SALES_DT;
+  expose ZSHS2_I_SALES_DT;
+  expose ZSHS2_I_EMPLOYEE;
+}

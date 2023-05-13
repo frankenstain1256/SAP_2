@@ -1,0 +1,21 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeNamePlural: 'Employees', typeName: 'Employee Information' }
+annotate view ZSHS2_I_EMPLOYEE with
+{
+  @UI.lineItem: [ { position: 10 } ]
+  @UI.identification: [{ position: 10 }]
+  @UI.dataPoint: { qualifier: 'PersonalNumber', title: 'Personal Number' }
+  EmployeePersonalNumber;
+  @UI.lineItem: [ { position: 20 } ]
+  @UI.identification: [{ position: 20 }]
+  @UI.dataPoint: { qualifier: 'LastName', title: 'Last Name' }
+  EmployeeLastName;
+  @UI.lineItem: [ { position: 30 } ]
+  @UI.identification: [{ position: 30 }]
+  @UI.dataPoint: { qualifier: 'FirstName', title: 'First Name' }
+  EmployeeFirstName;
+  @UI.lineItem: [ { position: 40 } ]
+  @UI.identification: [{ position: 40 }]
+  @UI.dataPoint: { qualifier: 'MiddleName', title: 'Middle Name' }
+  EmployeeMiddleName;
+}

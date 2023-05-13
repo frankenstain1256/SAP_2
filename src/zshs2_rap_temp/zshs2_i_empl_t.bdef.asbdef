@@ -1,0 +1,24 @@
+managed; // implementation in class zbp_shs2_i_empl_t unique;
+//strict ( 1 );
+
+define behavior for ZSHS2_I_EMPL_T //alias <alias_name>
+persistent table ZSHS2_D_EMPL_T
+lock master
+//authorization master ( instance )
+//etag master <field_name>
+{
+  field (readonly) EmployeeID;
+  create;
+  update;
+  delete;
+
+  mapping for zshs2_d_empl_t
+  {
+    EmployeeID = e_id;
+    EmployeeFirstName = e_first_name;
+    EmployeeLastName = e_last_name;
+    EmployeeMiddleName = e_mid_name;
+    Language = langu;
+  }
+
+}

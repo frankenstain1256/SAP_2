@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_MSAG" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <T100A>
+    <ARBGB>ZCM_SHS2_MSG</ARBGB>
+    <MASTERLANG>E</MASTERLANG>
+    <STEXT>Message Class</STEXT>
+   </T100A>
+   <T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_SHS2_MSG</ARBGB>
+     <MSGNR>001</MSGNR>
+     <TEXT>Employee Personal Number &apos;&amp;1&apos; should not be duplicated or empty</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_SHS2_MSG</ARBGB>
+     <MSGNR>002</MSGNR>
+     <TEXT>Employee should not be less than 16 years old</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_SHS2_MSG</ARBGB>
+     <MSGNR>003</MSGNR>
+     <TEXT>Employee name &quot;&amp;1&quot; should start from capital letter</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_SHS2_MSG</ARBGB>
+     <MSGNR>004</MSGNR>
+     <TEXT>Employee discount should not exceed 30 percents</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_SHS2_MSG</ARBGB>
+     <MSGNR>005</MSGNR>
+     <TEXT>POS Number &apos;&amp;1&apos; should not be duplicated or empty</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_SHS2_MSG</ARBGB>
+     <MSGNR>006</MSGNR>
+     <TEXT>Placement date &amp;1 should not be before POS open date or after system date</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_SHS2_MSG</ARBGB>
+     <MSGNR>007</MSGNR>
+     <TEXT>Sale discount &amp;1% should not exceed maximum product discount &amp;2</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_SHS2_MSG</ARBGB>
+     <MSGNR>008</MSGNR>
+     <TEXT>Employee &amp;1 unknown</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_SHS2_MSG</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>POS &amp;1 unknown</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_SHS2_MSG</ARBGB>
+     <MSGNR>010</MSGNR>
+     <TEXT>Product &amp;1 unknown</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_SHS2_MSG</ARBGB>
+     <MSGNR>011</MSGNR>
+     <TEXT>Active substance &amp;1 unknown</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_SHS2_MSG</ARBGB>
+     <MSGNR>012</MSGNR>
+     <TEXT>Employee last name should not be empty</TEXT>
+    </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZCM_SHS2_MSG</ARBGB>
+     <MSGNR>013</MSGNR>
+     <TEXT>Employee first name should not be empty</TEXT>
+    </T100>
+   </T100>
+  </asx:values>
+ </asx:abap>
+</abapGit>

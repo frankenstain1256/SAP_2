@@ -1,0 +1,19 @@
+@Metadata.layer: #CORE
+annotate view ZSHS2_C_POS with
+{
+  @UI.lineItem: [ { position: 10 } ]
+  @UI.identification: [ { position: 10 } ]
+  @UI.dataPoint: { qualifier: 'POSNumber', title: 'Number' }
+  @EndUserText.label: 'Number'
+  POSNumber;
+  @UI.lineItem: [ { position: 20 } ]
+  @UI.identification: [ { position: 20 } ]
+  @UI.dataPoint: { qualifier: 'POSCity', title: 'City' }
+  @EndUserText.label: 'City'
+  POSCity;
+  @UI.lineItem: [ { position: 30 } ]
+  @UI.identification: [ { position: 30 } ]
+  @UI.dataPoint: { qualifier: 'Address', title: 'Address' }
+  @EndUserText.label: 'Address'
+  POSAddress;
+}

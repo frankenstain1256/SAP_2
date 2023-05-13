@@ -1,0 +1,73 @@
+managed implementation in class zbp_shs2_i_employees unique;
+//strict; // ( 1 );
+
+define behavior for ZSHS2_I_EMPLOYEES alias Employees
+persistent table zshs2_d_employee
+lock master
+//authorization master ( instance )
+//etag master <field_name>
+{
+  field ( readonly ) EmployeeID;
+  create;
+  update;
+  delete;
+  association _Employee_Names_En { create ( features : instance ); }
+  association _Employee_Names_Ru { create ( features : instance ); }
+
+  mapping for zshs2_d_employee
+  {
+    EmployeeID = e_id;
+    EmployeePersonalNumber = e_pers_number;
+    EmployeeBirthDate = e_birth_date;
+    EmployeePersPhoneNumber = e_pers_phone;
+    EmployeeCorpPhoneNumber = e_corp_phone;
+    EmployeePersEmail = e_pers_email;
+    EmployeeCorpEmail = e_corp_email;
+    EmployeeDiscount = e_pers_discount;
+  }
+}
+
+
+define behavior for ZSHS2_I_EMPL_T_EN alias Employee_Names_En
+persistent table zshs2_d_empl_t
+lock dependent
+//authorization dependent
+//etag master <field_name>
+{
+  field ( readonly ) EmployeeID;
+  //  create;
+  update;
+  delete;
+  association _Employees;
+
+  mapping for zshs2_d_empl_t
+  {
+    EmployeeID = e_id;
+    Language = langu;
+    EmployeeFirstName_En = e_first_name;
+    EmployeeMiddleName_En = e_mid_name;
+    EmployeeLastName_En = e_last_name;
+  }
+}
+
+define behavior for ZSHS2_I_EMPL_T_RU alias Employee_Names_Ru
+persistent table zshs2_d_empl_t
+lock dependent
+//authorization dependent
+//etag master <field_name>
+{
+  field ( readonly ) EmployeeID;
+  //  create;
+  update;
+  delete;
+  association _Employees;
+
+  mapping for zshs2_d_empl_t
+  {
+    EmployeeID = e_id;
+    Language = langu;
+    EmployeeFirstName_Ru = e_first_name;
+    EmployeeMiddleName_Ru = e_mid_name;
+    EmployeeLastName_Ru = e_last_name;
+  }
+}

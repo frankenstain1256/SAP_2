@@ -1,0 +1,124 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { typeNamePlural: 'Sales' } //, title: { type: #STANDARD, value: 'ReceiptNumber' } }
+annotate view ZSHS2_C_SALES with
+{
+  @UI.facet: [
+    {
+    purpose: #HEADER,
+    position: 10,
+    type: #DATAPOINT_REFERENCE,
+    targetQualifier: 'ReceiptNumber'
+    },
+    {
+    id: 'POS',
+    type: #FIELDGROUP_REFERENCE,
+    position: 10,
+    targetQualifier: 'POS',
+    label: 'POS'
+    },
+    {
+    id: 'Employee',
+    type: #FIELDGROUP_REFERENCE,
+    position: 20,
+    targetQualifier: 'Employee',
+    label: 'Employee'
+    },
+    {
+    id: 'Detailed',
+    type: #FIELDGROUP_REFERENCE,
+    position: 30,
+    targetQualifier: 'Detailed',
+    label: 'Detailed Information'
+    },
+    {
+    id: 'Cash',
+    type: #FIELDGROUP_REFERENCE,
+    position: 40,
+    targetQualifier: 'Cash',
+    label: 'Cash Payment'
+    },
+    {
+    label: 'Cart Information',
+    purpose: #STANDARD,
+    type: #LINEITEM_REFERENCE,
+    //parentId: 'Detailed',
+    position: 300,
+    targetElement: '_Sales_DT'
+    }
+  ]
+  //  @UI.identification: [{ position: 10 }]
+  //  @UI.lineItem: [{ position: 10 }]
+  @UI.dataPoint: {  qualifier: 'ReceiptNumber', title: 'Receipt Number' }
+  @UI.fieldGroup: [{ qualifier: 'ReceiptNumber', position: 10 }]
+  ReceiptNumber;
+  //  @UI.lineItem: [{ position: 10 }]
+  //  @UI.identification: [{ position: 20 }]
+  @UI.dataPoint: {  qualifier: 'POSID', title: 'ID' }
+  @UI.fieldGroup: [{ qualifier: 'POS', position: 10 }]
+  POSID;
+  @UI.dataPoint: {  qualifier: 'POSNumber', title: 'Number' }
+  @UI.fieldGroup: [{ qualifier: 'POS', position: 15 }]
+  POSNumber;
+  //  @UI.lineItem: [{ position: 10 }]
+  //  @UI.identification: [{ position: 30 }]
+  @UI.dataPoint: {  qualifier: 'POSCity', title: 'City' }
+  @UI.fieldGroup: [{ qualifier: 'POS', position: 20 }]
+  POSCity;
+  //  @UI.lineItem: [{ position: 10 }]
+  //  @UI.identification: [{ position: 30 }]
+  @UI.dataPoint: {  qualifier: 'POSAddress', title: 'Address' }
+  @UI.fieldGroup: [{ qualifier: 'POS', position: 30 }]
+  POSAddress;
+  @UI.dataPoint: {  qualifier: 'EmployeeID', title: 'ID' }
+  @UI.fieldGroup: [{ qualifier: 'Employee', position: 0 }]
+  EmployeeID;
+  //@UI.lineItem: [{ position: 10 }]
+  //@UI.identification: [{ position: 10 }]
+  @UI.dataPoint: {  qualifier: 'PersonalNumber', title: 'Personal Number' }
+  @UI.fieldGroup: [{ qualifier: 'Employee', position: 5 }]
+  PersonalNumber;
+  //@UI.lineItem: [{ position: 10 }]
+  //@UI.identification: [{ position: 10 }]
+  @UI.dataPoint: {  qualifier: 'LastName', title: 'Last Name' }
+  @UI.fieldGroup: [{ qualifier: 'Employee', position: 10 }]
+  LastName;
+  //@UI.lineItem: [{ position: 10 }]
+  //@UI.identification: [{ position: 20 }]
+  @UI.dataPoint: {  qualifier: 'FirstName', title: 'First Name' }
+  @UI.fieldGroup: [{ qualifier: 'Employee', position: 20 }]
+  FirstName;
+  //@UI.lineItem: [{ position: 10 }]
+  //@UI.identification: [{ position: 30 }]
+  @UI.dataPoint: {  qualifier: 'MiddleName', title: 'Middle Name' }
+  @UI.fieldGroup: [{ qualifier: 'Employee', position: 30 }]
+  MiddleName;
+  //  @UI.lineItem: [{ position: 10 }]
+  //  @UI.identification: [{ position: 50 }]
+  //  @UI.dataPoint: {  qualifier: 'Sale Date', title: 'Date' }
+  //  @UI.fieldGroup: [{ qualifier: 'Seller' }]
+  //  SaleDate;
+  //  @UI.lineItem: [{ position: 10 }]
+  //  @UI.identification: [{ position: 60 }]
+  //  // @UI.dataPoint: {  qualifier: 'Sale Time', title: 'Time' }
+  //  @UI.fieldGroup: [{ qualifier: 'Seller' }]
+  //  SaleTime;
+  //  @UI.lineItem: [{ position: 10 }]
+    @UI.identification: [{ position: 70 }]
+  //  //  @UI.dataPoint: {  qualifier: 'SaleIsCash', title: 'Cash Payment' }
+    @UI.fieldGroup: [{ qualifier: 'Cash' }]
+    SaleIsCash;
+  //  @UI.identification: [{ position: 80 }]
+  //  @UI.lineItem: [ { position: 80 } ]
+  //  @UI.fieldGroup: [{ qualifier: '_Sales_DT' }]
+  //  _Sales_DT;
+  //  @UI.lineItem: [ { position: 80 } ]
+  //  _Employees;
+  //  @UI.lineItem: [ { position: 80 } ]
+  //  _POS;
+  //  @UI.identification: [{ position: 80 }]
+  //  productname;
+  //  @UI.identification: [{ position: 90 }]
+  //  productcount;
+  //  @UI.identification: [{ position: 100 }]
+  //  totalcost;
+}

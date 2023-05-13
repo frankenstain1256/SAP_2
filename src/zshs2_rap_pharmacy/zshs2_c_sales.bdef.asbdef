@@ -1,0 +1,32 @@
+//managed implementation in class zbp_shs2_c_sales unique;
+//strict; // ( 1 );
+projection;
+
+define behavior for ZSHS2_C_SALES alias Sales
+//persistent table ZSHS2_A_SALES
+//lock master
+//authorization master ( global )
+//etag master <field_name>
+{
+  use create;
+  //  update;
+  use delete;
+  //  use association _Employees;
+  //  use association _POS;
+  use association _Sales_DT { create; }
+}
+
+
+//define behavior for ZSHS2_C_SALES_DT alias Sales_DT
+////persistent table ZSHS2_A_SALES
+////lock master
+////authorization master ( global )
+////etag master <field_name>
+//{
+//  //  use create;
+//  use update;
+//  use delete;
+//  //  use association _Employees;
+//  //  use association _POS;
+//  use association _Sales;
+//}
